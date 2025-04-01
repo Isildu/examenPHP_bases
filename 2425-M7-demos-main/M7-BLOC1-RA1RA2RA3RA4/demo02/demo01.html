@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulari d'Usuari</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-900 flex justify-center items-center min-h-screen">
+    <div class="bg-white shadow-lg rounded-lg p-6 w-96">
+        <h2 class="text-2xl font-bold text-gray-800 text-center mb-4">
+            <i class="fa-solid fa-user-edit text-blue-500 mr-2"></i> Registre d'Usuari
+        </h2>
+        <form action="demo01_2.php" method="POST" class="space-y-4">
+            <div>
+                <label class="block text-gray-700">Nom:</label>
+                <input type="text" name="nom" required class="w-full border rounded-lg p-2">
+            </div>
+            <div>
+                <label class="block text-gray-700">Cognoms:</label>
+                <input type="text" name="cognoms" required class="w-full border rounded-lg p-2">
+            </div>
+            <div>
+                <label class="block text-gray-700">Gènere:</label>
+                <div class="flex space-x-4">
+                    <label><input type="radio" name="genere" value="Home" required> Home</label>
+                    <label><input type="radio" name="genere" value="Dona"> Dona</label>
+                    <label><input type="radio" name="genere" value="Altres"> Altres</label>
+                </div>
+            </div>
+            <div>
+                <label class="block text-gray-700">Correu electrònic:</label>
+                <input type="email" name="email" required class="w-full border rounded-lg p-2">
+            </div>
+            <div>
+                <label class="block text-gray-700">Edat:</label>
+                <input type="number" name="edat" min="0" required class="w-full border rounded-lg p-2">
+            </div>
+            <div>
+                <label class="block text-gray-700">Ciutat:</label>
+                <input list="ciutats" name="ciutat" required class="w-full border rounded-lg p-2">
+                <datalist id="ciutats">
+                    <option value="Barcelona">
+                    <option value="Girona">
+                    <option value="Lleida">
+                    <option value="Tarragona">
+                </datalist>
+            </div>
+            <div>
+                <label class="block text-gray-700">Aficions:</label>
+                <div class="flex flex-wrap gap-2">
+                    <label><input type="checkbox" name="aficions[]" value="Esports"> Esports</label>
+                    <label><input type="checkbox" name="aficions[]" value="Música"> Música</label>
+                    <label><input type="checkbox" name="aficions[]" value="Lectura"> Lectura</label>
+                    <label><input type="checkbox" name="aficions[]" value="Cinema"> Cinema</label>
+                    <label><input type="checkbox" name="aficions[]" value="Cuina"> Cuina</label>
+                </div>
+            </div>
+            <div>
+                <label class="block text-gray-700">Motivacions personals:</label>
+                <textarea name="motivacions" rows="4" class="w-full border rounded-lg p-2"></textarea>
+            </div>
+            <div class="flex justify-between">
+                <button type="reset" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600">Netejar</button>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Enviar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
