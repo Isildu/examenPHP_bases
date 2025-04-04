@@ -9,7 +9,7 @@
 </head>
 <body class="bg-gray-900 flex flex-col items-center justify-center min-h-screen p-6">
     
-    <!-- Logo -->
+    <!-- Logko -->
     <div class="mb-6">
         <img src="https://itb.cat/wp-content/uploads/2024/02/logo_ITB_classic_Blanc_150-1.png" alt="Logo ITB" class="w-40">
     </div>
