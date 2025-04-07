@@ -5,29 +5,25 @@
     <script>
         async function carregarProductes() {
             try {
-                const resposta = await fetch('https://fakestoreapi.com/products');
+                const resposta = await fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'foo',
+    body: 'bar',
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
                 console.log(resposta);
                 if (!resposta.ok) throw new Error("Error en carregar els productes");
 
                 const productes = await resposta.json();
                 console.log(productes);
-                const llista = document.getElementById("productes");
-
-                if (productes.length === 0) {
-                    llista.innerHTML = "<h3>No hi ha productes per mostrar.</h3>";
-                    return;
-                }
-                productes.forEach(producte => {
-                    const element = document.createElement("li");
-                    element.innerHTML = `
-                        <p><strong>${producte.title}</strong></p>
-                        <p>${producte.description}</p>
-                        <img src="${producte.image}" alt="${producte.title}" width="150"><br/>
-                        Preu: ${producte.price}€
-                        <hr/>
-                    `;
-                    llista.appendChild(element);
-                });
+                
             } catch (error) {
                 console.error(error);
             }
